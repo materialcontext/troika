@@ -1,0 +1,62 @@
+---
+import createCharacter from "./generateTroika.js"
+
+let {character, stamina, luck, skill} = createCharacter();
+---
+
+<div class="flex flex-col main px-4">
+  <div>
+    <h1 class="text-2xl font-semibold">{character.id} {character.name}</h1>
+    <div class="flex justify-around my-4">
+      <div class="w-[150px] flex flex-col items-center text-primRed">
+        <h3 class="text-3xl font-bold">Stamina</h3>
+        <span class="text-4xl font-bold">{stamina}</span>
+      </div>
+      <div class="w-[150px] flex flex-col items-center text-primRed">
+        <h3 class="text-3xl font-bold">Luck</h3>
+        <span class="text-4xl font-bold">{luck}</span>
+      </div>
+      <div class="w-[150px] flex flex-col items-center text-primRed">
+        <h3 class="text-3xl font-bold">Skill</h3>
+        <span class="text-4xl font-bold">{skill}</span>
+      </div>
+    </div>
+    <h3 class="text-lg font-semibold pb-1">Description</h3>
+    <p>{character.description}</p>
+    <div class="flex">
+      <div>
+        <div>
+          <h3 class="text-lg font-semibold py-1">Possessions</h3>
+          <ul class="list-disc pl-8">
+            {character.possessions.map((item) => <li>{item}</li>)}
+          </ul>
+        </div>
+        <div>
+          <h3 class="text-lg font-semibold py-1">Advanced Skills</h3>
+          <ul class="list-disc pl-8">
+            {
+              Object.entries(character.skills).map(([key, value]) => {
+                return (
+                  <li>
+                    {key}: {value}
+                  </li>
+                );
+              })
+            }
+          </ul>
+        </div>
+        {
+          character.special && (
+            <div>
+              <h3 class="text-lg font-semibold py-1">Special</h3>
+              <p>{character.special}</p>
+            </div>
+          )
+        }
+      </div>
+    </div>
+  </div>
+  <button class="m-2" onclick="window.location.reload()"
+    >Generate New Character</button
+  >
+</div>
