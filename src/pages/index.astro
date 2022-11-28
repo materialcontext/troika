@@ -1,6 +1,7 @@
 ---
-import Troika from "../components/Troika.astro";
-import "../styles/fonts.css";
+import {Name, Stats, Description, PossessionsList, SkillsList, Special} from "../components/TroikaCharacter.jsx";
+import Layout from "../layouts/TroikaLayout.astro";
+import "../styles/index.css";
 ---
 
 <html lang="en">
@@ -11,8 +12,13 @@ import "../styles/fonts.css";
     <title>Document</title>
   </head>
   <body>
-    <div class="md:w-2/3 max-w-[680px] flex m-auto p-4">
-      <Troika />
-    </div>
+    <Layout>
+      <Name  slot="id-name" client:only/>
+      <Stats slot="statsBar" client:only/>
+      <Description slot="description" client:only/>
+      <PossessionsList slot="possessionsList" client:only />
+      <SkillsList slot="skillsList" client:only/>
+      <Special slot="special" client:only/>
+    </Layout>  
   </body>
 </html>

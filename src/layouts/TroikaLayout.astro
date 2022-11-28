@@ -1,0 +1,23 @@
+---
+---
+
+<main class="main">
+  <slot name="id-name" />
+  <slot name="statsBar" />
+  <section>
+    <h3 class="text-lg font-semibold pb-1">Description</h3>
+    <slot name="description" />
+  </section>
+  <section>
+    <h3 class="text-lg font-semibold py-1">Possessions</h3>
+    <slot name="possessionsList" />
+  </section>
+  <section>
+    <h3 class="text-lg font-semibold py-1">Advanced Skills</h3>
+    <slot name="skillsList" />
+  </section>
+  <slot name="special" />
+  <button class="m-4" onclick="window.location.reload()">
+    Generate New Character
+  </button>
+</main>

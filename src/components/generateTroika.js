@@ -1,7 +1,7 @@
 import characters from "../pages/TroikaCharacters.json";
 import spells from "../pages/TroikaSpells.json";
 
-console.log("hello")
+console.log("hello");
 
 function roll(sides) {
   return Math.floor(Math.random() * sides) + 1;
@@ -12,7 +12,7 @@ function getRandomSpell() {
   return spellNames[roll(spellNames.length)];
 }
 
-function createCharacter() {
+export default function createCharacter() {
   let d66 = roll(6).toString() + roll(6);
   let character = characters[d66];
   let skills = Object.keys(character.skills);
@@ -32,8 +32,6 @@ function createCharacter() {
     character: character,
     skill: skill,
     luck: luck,
-    stamina: stamina,
+    stamina: stamina
   };
 }
-
-export default createCharacter;
