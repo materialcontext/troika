@@ -9,6 +9,7 @@ module.exports = {
       colors: {
         primYellow: "#fff143",
         primRed: "#f14135",
+        primRedDark: "#BC3029"
       },
     },
   },

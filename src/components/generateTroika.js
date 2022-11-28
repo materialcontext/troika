@@ -17,7 +17,7 @@ export default function createCharacter() {
   let character = characters[d66];
   let skills = Object.keys(character.skills);
   for (let skill of skills) {
-    if (/Spell - Random \d*/.test(skill)) {
+    if (/Spell - Random *\d*/.test(skill)) {
       let value = character.skills[skill];
       delete character.skills[skill];
       character.skills[`Spell - ${getRandomSpell()}`] = value;

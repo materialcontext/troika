@@ -17,7 +17,12 @@
     <slot name="skillsList" />
   </section>
   <slot name="special" />
-  <button class="m-4" onclick="window.location.reload()">
-    Generate New Character
-  </button>
+  <div class="flex justify-center my-4">
+    <button
+      class="btn bg-primRed text-white hover:bg-primRedDark w-[300px] rounded-md hover:shadow-md text-2xl"
+      onclick="window.location.reload()"
+    >
+      Re-Roll
+    </button>
+  </div>
 </main>
